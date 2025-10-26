@@ -27,12 +27,7 @@
 const route = useRoute()
 const { request } = useWpApi()
 const { user, hasRole, token } = useAuth()
-const { data: post, pending } = await request(`api/v1/content/${route.params.slug}`, {
-  method: 'GET',
-  headers: {
-    Authorization: `Bearer ${useAuth().token.value}`,
-  },
-})
+const { data: post, pending } = await request(`api/v1/single/${route.params.slug}`)
 </script>
 
 <style></style>
